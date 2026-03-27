@@ -23,3 +23,12 @@
 ###### *March  27, 2026*
 
 * *My blog's website is launched for the first time without using a separate domain;*
+* *Optimized display model;*
+* *Logical execute is subdivided into various unit modules;*
+* *The current unfinished project items:*
+  * *Expansion description of my blog's home;*
+  * *Expansion description of e-development page;*
+  * *Expansion description of fullstacked page;*
+  * *Expansion description of tools-skills page;*
+  * *Expansion description of about-donate page;*
+* *The version of the web zip is GooHv'sBlog-260327-03.zip*
