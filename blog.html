@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GooHv's Blog</title>
+    <link rel="icon" href="./images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="./font/iconfont.css">
+    <!-- 1. 基础重置 (保持不变) -->
+    <link rel="stylesheet" href="./css/b_bass.css">
+    <!-- 2. 核心架构与侧边栏 (必须第一个加载) -->
+    <link rel="stylesheet" href="./css/b_main.css">
+    <!-- 3. 各个子页面的专用样式 (按需加载，顺序不重要，但在 main 之后) -->
+    <link rel="stylesheet" href="./css/bs_home.css">
+    <link rel="stylesheet" href="./css/bs_edevelopment.css">
+    <link rel="stylesheet" href="./css/bs_fullstacked.css">
+    <link rel="stylesheet" href="./css/bs_skills.css">
+    <link rel="stylesheet" href="./css/bs_donate.css">
+    <link rel="stylesheet" href="./css/bs_error.css">
+</head>
+
+<body>
+    <div class="shell">
+        <ul class="nav">
+            <!-- 这是页面的logo展示区 -->
+            <li id="logo">
+                <a href="#my-home" onclick="loadPage('my-home'); return false;">
+                    <div class="icon">
+                        <div class="imageBox">
+                            <img src="./images/CodingMan.png" alt="">
+                        </div>
+                    </div>
+                    <div class="text logo-text">
+                        <span>GooHv'S</span>
+                        <span>BLOG</span>
+                    </div>
+                </a>
+            </li>
+            <!-- 这是页面的选框区之设备开发 -->
+            <li>
+                <a href="#e-development">
+                    <div class="icon">
+                        <i class="iconfont icon-e-development"></i>
+                    </div>
+                    <div class="text">设备开发</div>
+                </a>
+            </li>
+            <!-- 这是页面的选框区之全栈技术 -->
+            <li>
+                <a href="#full-stacked">
+                    <div class="icon">
+                        <i class="iconfont icon-full-stacked"></i>
+                    </div>
+                    <div class="text">全栈技术</div>
+                </a>
+            </li>
+            <!-- 这是页面的选框区之工具技巧 -->
+            <li>
+                <a href="#tools-skills" onclick="loadPage('tools-skills'); return false;">
+                    <div class="icon">
+                        <i class="iconfont icon-skills"></i>
+                    </div>
+                    <div class="text">工具技巧</div>
+                </a>
+            </li>
+            <!-- 这是页面的选框区之关于捐献 -->
+            <li>
+                <a href="#about-donation" onclick="loadPage('about-donation'); return false;">
+                    <div class="icon">
+                        <i class="iconfont icon-about-donate"></i>
+                    </div>
+                    <div class="text">关于捐献</div>
+                </a>
+            </li>
+            <!-- 这是页面的选框区之友情链接 -->
+            <li class="friend-links-container">
+                <div class="links-wrapper"> 
+                    <!-- 1. 主入口图标 (收起时显示，展开时隐藏) -->
+                    <a href="javascript:void(0)" class="main-entry" title="友情链接">
+                        <i class="iconfont icon-friend-link"></i> 
+                    </a>
+
+                    <!-- 2. 子链接列表 (收起时隐藏，展开时显示) -->
+                    <div class="sub-links">
+                        <!-- 链接 1: GitHub -->
+                        <a href="https://github.com/GooHvLiu" target="_blank" title="GitHub">
+                            <i class="iconfont icon-github"></i> 
+                        </a>
+                        <!-- 链接 2: w3School -->
+                        <a href="https://www.w3school.com.cn/" target="_blank" title="W3school">
+                            <i class="iconfont icon-w3school"></i>
+                        </a>
+                        <!-- 链接 3: 个人博客 -->
+                        <a href="./index.html" target="_blank" title="GooHv's Blog">
+                            <i class="iconfont icon-coding"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 这是主页面中主页链接区域 -->
+    <section id="my-home">
+        
+    </section>
+
+    <!-- 这是主页面中设备开发链接区域 -->
+    <section id="e-development">
+        
+    </section>
+
+    <!-- 这是主页面中全栈技术链接区域 -->
+    <section id="full-stacked">
+        
+    </section>
+
+    <!-- 这是主页面中工具技巧链接区域 -->
+    <section id="tools-skills">
+        
+    </section>
+    <!-- 这是主页面中关于捐献链接区域 -->
+    <section id="about-donation">
+        
+    </section>
+
+<!-- 脚本加载顺序至关重要 -->
+<!-- 1. 全局配置 (必须第一个，提供 PAGE_PATH_MAP) -->
+<script src="./js/b_gconfig.js"></script>
+
+<!-- 2. 功能模块 (定义函数，依赖配置) -->
+<script src="./js/b_hightlight.js"></script>
+<script src="./js/b_load.js"></script>
+
+<!-- 3. 初始化入口 (最后加载，绑定事件并调用上述函数) -->
+<script src="./js/b_init.js"></script>
+</body>
+</html> 

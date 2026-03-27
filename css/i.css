@@ -1,0 +1,129 @@
+
+:root {
+    --primary: #ffa117;
+    --bg-dark: #0a0a0a;
+    --text-light: #f0f0f0;
+    --text-dim: #888;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Consolas', 'Monaco', monospace; /* 程序员字体 */
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-image: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #000 100%);
+}
+
+.container {
+    text-align: center;
+    max-width: 800px;
+    padding: 20px;
+    animation: fadeIn 1.5s ease-out;
+}
+
+/* 头像区域 */
+.avatar-box {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 30px;
+    border-radius: 50%;
+    border: 3px solid var(--primary);
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(255, 161, 23, 0.4);
+    position: relative;
+}
+
+.avatar-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 打字机文字效果 */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.typewriter {
+    font-size: 1.2rem;
+    color: var(--primary);
+    margin-bottom: 40px;
+    min-height: 1.5em;
+    font-weight: bold;
+}
+
+.cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1.2em;
+    background-color: var(--primary);
+    animation: blink 1s infinite;
+    vertical-align: middle;
+}
+
+/* 按钮组 */
+.btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: inherit;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--primary);
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: #000;
+}
+
+.btn-primary:hover {
+    background-color: #e59015;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 161, 23, 0.4);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--primary);
+}
+
+.btn-outline:hover {
+    background-color: rgba(255, 161, 23, 0.1);
+    transform: translateY(-2px);
+}
+
+/* 底部版权 */
+.footer {
+    position: absolute;
+    bottom: 20px;
+    font-size: 0.8rem;
+    color: var(--text-dim);
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+/* 移动端适配 */
+@media (max-width: 600px) {
+    h1 { font-size: 1.8rem; }
+    .btn-group { flex-direction: column; width: 100%; }
+    .btn { width: 100%; }
+}

@@ -1,0 +1,67 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 5144908 */
+  src: url('iconfont.woff2?t=1774449255094') format('woff2'),
+       url('iconfont.woff?t=1774449255094') format('woff'),
+       url('iconfont.ttf?t=1774449255094') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-search:before {
+  content: "\e87c";
+}
+
+.icon-rocket:before {
+  content: "\ea2d";
+}
+
+.icon-map-signs:before {
+  content: "\f046";
+}
+
+.icon-puzzle-piece:before {
+  content: "\f08c";
+}
+
+.icon-e-development:before {
+  content: "\e623";
+}
+
+.icon-w3school:before {
+  content: "\e610";
+}
+
+.icon-friend-link:before {
+  content: "\e636";
+}
+
+.icon-github:before {
+  content: "\e63a";
+}
+
+.icon-coding:before {
+  content: "\e617";
+}
+
+.icon-skills:before {
+  content: "\ec9f";
+}
+
+.icon-full-stacked:before {
+  content: "\e63d";
+}
+
+.icon-about-donate:before {
+  content: "\e601";
+}
+
+.icon-home:before {
+  content: "\eac9";
+}
+

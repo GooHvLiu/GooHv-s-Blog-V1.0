@@ -1,0 +1,34 @@
+<!-- 404 Error Page Content -->
+
+<div class="error-container">
+    <!-- 主要内容 -->
+    <div class="error-code">404</div>
+    <h2 class="error-title">页面迷失在宇宙中</h2>
+    <p class="error-message">
+        抱歉，您访问的页面似乎已被移除，或者链接地址有误。
+    </p>
+
+    <!-- 按钮： onclick 触发主页面的 loadPage('my-home') -->
+    <!-- 注意：这里使用 onclick 调用主上下文函数，实现无刷新跳转 -->
+    <button class="error-btn" onclick="loadPage('my-home')">
+        <i class="fas fa-home"></i> 
+        <span>返回首页</span>
+    </button>
+    
+    <div style="margin-top: 30px; font-size: 0.9rem; color: #8a8ab9;">
+        或者检查您的网址输入是否正确
+    </div>
+</div>
+
+<script>
+    // 简单的交互：鼠标移入按钮时改变图标
+    const btn = document.querySelector('.error-btn');
+    if(btn) {
+        btn.addEventListener('mouseenter', () => {
+            btn.innerHTML = '<i class="fas fa-rocket"></i> <span>立即启程</span>';
+        });
+        btn.addEventListener('mouseleave', () => {
+            btn.innerHTML = '<i class="fas fa-home"></i> <span>返回首页</span>';
+        });
+    }
+</script>

@@ -1,0 +1,302 @@
+/* =========================================
+   blog_main.css - 最终修正版 (支持长内容 + 磁铁吸附)
+   ========================================= */
+
+/* --- 全局重置 --- */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%; /* 让 html 也占满 */
+}
+
+body {
+    background: #e4e9f5;
+    font-family: 'Arial', 'Microsoft YaHei', sans-serif;
+    
+    /* 【核心魔法 1】让 body 成为滚动容器 */
+    height: 100vh;
+    overflow-y: auto;       /* 允许垂直滚动 */
+    overflow-x: hidden;     /* 禁止水平滚动 */
+    
+    /* 【核心魔法 2】开启 Y 轴强制吸附 */
+    /* 注意：mandatory 依然有效，即使 section 高度超过 100vh，
+       它也会在滚动停止时尝试对齐到最近的 section 顶部 */
+    scroll-snap-type: y mandatory;
+    
+    /* 【核心魔法 3】平滑滚动行为 */
+    scroll-behavior: smooth;
+    
+    /* 隐藏滚动条 (美观) */
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar { 
+    display: none; 
+}
+
+/* --- Section 核心修正 (支持长内容) --- */
+section {
+    /* 【核心魔法 4】定义吸附点：顶部对齐 */
+    scroll-snap-align: start;
+    
+    /* 【关键修改】改为 min-height，允许内容撑开高度 */
+    /* min-height: 100vh;  */
+    width: 100%;
+    
+    /* 恢复 Flex 布局以实现“内容少时居中，内容多时自然排列” */
+    display: flex;
+    flex-direction: column; /* 垂直排列子元素 */
+    justify-content: center; /* 内容少时：垂直居中 */
+    align-items: center;     /* 水平居中 */
+    
+    position: relative;
+    box-sizing: border-box;
+    padding: 20px;
+    background: #e4e9f5;
+    
+    /* 禁止选中 (侧边栏交互需要) */
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    
+    /* 确保长内容不会被截断 */
+    overflow: visible; 
+    z-index: 1; /* 确保在背景之上 */
+}
+
+/* 
+   【重要技巧】当内容超过一屏时，justify-content: center 可能会导致上下留白不均。
+   但这对显示内容没有影响，内容会完整显示。
+   如果你希望内容多时强制从顶部开始显示（不留上方空白），
+   可以取消下面的注释，但这会牺牲“短内容居中”的效果。
+   目前配置是：短内容居中，长内容完整显示（上下可能有留白，但内容全在）。
+*/
+
+/* 允许子页面内容区域恢复文字选中 */
+section .content-wrapper,
+section .tools-library,
+section .donate-wrapper,
+section .stack-container,
+section .dev-container,
+section * {
+    user-select: text;
+    -webkit-user-select: text;
+}
+
+/* ================= 左侧侧边栏 (.shell) - 保持原样 ================= */
+.shell {
+    position: fixed;
+    width: 84px;
+    height: 100%;
+    background: #000000;
+    z-index: 9999; /* 确保始终在最上层 */
+    transition: width 0.5s;
+    padding-left: 10px;
+    overflow: hidden;
+}
+
+.shell:hover {
+    width: 200px;
+}
+
+.imageBox {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #fff;
+}
+
+.imageBox img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.active {
+    background: #e4e9f5;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+.active::before {
+    content: "";
+    position: absolute;
+    top: -30px;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    border-bottom-right-radius: 25px;
+    box-shadow: 5px 5px 0 5px #e4e9f5;
+    background: transparent;
+}
+
+.active::after {
+    content: "";
+    position: absolute;
+    bottom: -30px;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    border-top-right-radius: 25px;
+    box-shadow: 5px -5px 0 5px #e4e9f5;
+    background: transparent;
+}
+
+#logo {
+    margin: 40px 0 100px 0;
+}
+
+.shell ul {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+.shell ul li {
+    position: relative;
+    padding: 5px;
+}
+
+.shell ul li a {
+    position: relative;
+    display: flex;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.icon {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 60px;
+    padding-left: 10px;
+    height: 70px;
+    color: rgb(255, 255, 255);
+    transition: 0.5s;
+}
+
+.active a .icon::before {
+    content: "";
+    position: absolute;
+    inset: 5px;
+    width: 60px;
+    background: #000000;
+    border-radius: 50%;
+    transition: 0.5s;
+    border: 7px solid #ffa117;
+    box-sizing: border-box;
+}
+
+.icon i {
+    font-size: 30px;
+    z-index: 999;
+}
+
+.text {
+    position: relative;
+    min-height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 20px;
+    color: #ffad32c1;
+    padding-left: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.5s;
+}
+
+.logo-text {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+.logo-text span {
+    display: block;
+    transition: color 0.5s;
+}
+
+.shell ul li:hover a .logo-text span,
+.shell ul li:hover a .icon,
+.shell ul li:hover a .text {
+    color: #ffa117;
+}
+
+/* ================= 友情链接 ================= */
+.friend-links-container {
+    position: absolute;
+    bottom: -10px;
+    left: 3px;
+    width: calc(100% - 20px);
+    transition: all 0.5s;
+    z-index: 100;
+}
+
+.links-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    padding-left: 12px;
+    align-items: center;
+    height: 50px;
+}
+
+.links-wrapper a, 
+.sub-links a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 20px;
+    transition: all 0.3s;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.links-wrapper a:hover,
+.sub-links a:hover {
+    background: #ffa117;
+    color: #000;
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 4px 10px rgba(255, 161, 23, 0.4);
+}
+
+.sub-links { display: none; }
+.main-entry { display: flex; }
+
+.shell:hover .main-entry { display: none; }
+.shell:hover .sub-links {
+    display: flex;
+    gap: 15px;
+}
+
+@keyframes popInLinks {
+    to { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+.shell:hover .sub-links a {
+    opacity: 0;
+    transform: translateX(-10px) scale(0.5);
+    animation: popInLinks 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.shell:hover .sub-links a:nth-child(1) { animation-delay: 0.05s; }
+.shell:hover .sub-links a:nth-child(2) { animation-delay: 0.1s; }
+.shell:hover .sub-links a:nth-child(3) { animation-delay: 0.15s; }

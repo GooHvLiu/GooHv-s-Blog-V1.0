@@ -1,0 +1,100 @@
+{
+  "id": "5144908",
+  "name": "Side-Nav",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "18991731",
+      "name": "search",
+      "font_class": "search",
+      "unicode": "e87c",
+      "unicode_decimal": 59516
+    },
+    {
+      "icon_id": "4789152",
+      "name": "rocket",
+      "font_class": "rocket",
+      "unicode": "ea2d",
+      "unicode_decimal": 59949
+    },
+    {
+      "icon_id": "5634220",
+      "name": "map-signs",
+      "font_class": "map-signs",
+      "unicode": "f046",
+      "unicode_decimal": 61510
+    },
+    {
+      "icon_id": "5634311",
+      "name": "puzzle-piece",
+      "font_class": "puzzle-piece",
+      "unicode": "f08c",
+      "unicode_decimal": 61580
+    },
+    {
+      "icon_id": "10464248",
+      "name": "e-development",
+      "font_class": "e-development",
+      "unicode": "e623",
+      "unicode_decimal": 58915
+    },
+    {
+      "icon_id": "26704679",
+      "name": "w3school",
+      "font_class": "w3school",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "1395853",
+      "name": "friend-link",
+      "font_class": "friend-link",
+      "unicode": "e636",
+      "unicode_decimal": 58934
+    },
+    {
+      "icon_id": "7714975",
+      "name": "github",
+      "font_class": "github",
+      "unicode": "e63a",
+      "unicode_decimal": 58938
+    },
+    {
+      "icon_id": "11348940",
+      "name": "coding",
+      "font_class": "coding",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "15378794",
+      "name": "skills",
+      "font_class": "skills",
+      "unicode": "ec9f",
+      "unicode_decimal": 60575
+    },
+    {
+      "icon_id": "30400195",
+      "name": "full-stacked",
+      "font_class": "full-stacked",
+      "unicode": "e63d",
+      "unicode_decimal": 58941
+    },
+    {
+      "icon_id": "4376853",
+      "name": "about-donate",
+      "font_class": "about-donate",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "5387402",
+      "name": "home",
+      "font_class": "home",
+      "unicode": "eac9",
+      "unicode_decimal": 60105
+    }
+  ]
+}
