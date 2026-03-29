@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let tagMark="b_init.js";
             Object.keys(PAGE_PATH_MAP).forEach(id => loadPage(tagMark, id, true));
         }
-        updateActiveLink('my-home', "b_init.js-初始化触发my-home高亮状态");
+        updateActiveLink('myHome', "b_init.js-初始化触发myHome高亮状态");
     };
     // 延迟100ms执行，确保DOM已经加载完毕
     setTimeout(initAndPreload, 100);    

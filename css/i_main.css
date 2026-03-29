@@ -1,11 +1,4 @@
 
-:root {
-    --primary: #ffa117;
-    --bg-dark: #0a0a0a;
-    --text-light: #f0f0f0;
-    --text-dim: #888;
-}
-
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {

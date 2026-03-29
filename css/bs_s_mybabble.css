@@ -1,0 +1,195 @@
+/* =========================================
+bs_s_donate.css - 关于捐献 页面样式
+========================================= */
+/* --- 页面主体容器 --- */
+.babble-page-container {
+    max-width: var(--sectionHTMLWidth); 
+    width: 100%;
+    margin: 0 auto;
+    padding: 0px 20px 50px; /* 顶部留出导航栏空间 */
+}
+
+/* --- 板块标题设计 --- */
+.babble-section-header {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.babble-section-header h2 {
+    font-size: 2.4rem;
+    margin: 0;
+    color: var(--text-main);
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    letter-spacing: 1px;
+}
+
+/* 标题背后的装饰光晕 */
+.babble-section-header::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 220px;
+    height: 70px;
+    background: rgba(74, 144, 226, 0.1);
+    border-radius: 30px;
+    z-index: 0;
+}
+
+.babble-section-desc {
+    margin-top: 15px;
+    color: var(--text-sub);
+    font-size: 1.1rem;
+}
+
+/* --- 网格布局 --- */
+.babble-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* 最小宽度280px，自动填充 */
+    gap: 35px;
+}
+
+/* --- 卡片核心样式 --- */
+.babble-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 30px;
+    text-decoration: none;
+    color: var(--text-main);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.02);
+    height: 100%;
+    box-sizing: border-box;
+    /* 核心：平时微微晃动 */
+   animation: gentle-float 5s ease-in-out infinite;
+}
+
+/* 顶部左侧的彩色条 */
+.babble-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--babble-primary), var(--babble-accent));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+/* 图标样式 */
+.babble-card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    background: -webkit-linear-gradient(var(--babble-primary), var(--babble-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: transform 0.4s ease;
+}
+
+/* 字体图标样式 */
+.babble-card-icon .iconfont {
+   font-size: 2.2rem; /* 这样只会影响标题，不会影响其他地方 */
+}
+
+/* 标题样式 */
+.babble-card-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin: 0 0 15px 0;
+    color: var(--text-main);
+    line-height: 1.4;
+}
+
+/* 描述文字 */
+.babble-card-desc {
+    font-size: 0.95rem;
+    color: var(--text-sub);
+    margin-bottom: 25px;
+    flex: 1; /* 撑开高度，让按钮对齐底部 */
+    line-height: 1.7;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* 限制显示3行 */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* 分类标签 (如：行业观察) */
+.babble-card-tag {
+    display: inline-block;
+    padding: 6px 12px;
+    background: rgba(142, 68, 173, 0.08);
+    color: var(--babble-primary);
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(142, 68, 173, 0.15);
+    transition: all 0.3s;
+}
+
+/* 底部按钮 */
+.babble-card-btn {
+    display: block;
+    text-align: center;
+    background: var(--text-main);
+    color: #fff;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+    position: relative;
+    z-index: 1;
+}
+
+/* --- 悬停交互效果 --- */
+.babble-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(142, 68, 173, 0.2); /* 紫色阴影 */
+    border-color: rgba(142, 68, 173, 0.3);
+}
+
+.babble-card:hover::after {
+    transform: scaleX(1); /* 顶部线条展开 */
+}
+
+.babble-card:hover .babble-card-icon {
+    transform: scale(1.1) rotate(-5deg); /* 图标放大并旋转 */
+}
+
+.babble-card:hover .babble-card-btn {
+    background: var(--babble-primary);
+}
+
+.babble-card:hover .babble-card-tag {
+    background: var(--babble-primary);
+    color: #fff;
+}
+
+/* --- 动画定义 --- */
+@keyframes gentle-float {
+   0%, 100% { transform: translateY(0) rotate(0deg); }
+   25% { transform: translateY(-3px) rotate(0.5deg); }
+   75% { transform: translateY(3px) rotate(-0.5deg); }
+}
+
+/* --- 响应式适配 --- */
+@media (max-width: 768px) {
+    .babble-grid {
+        grid-template-columns: 1fr; /* 手机端单列 */
+    }
+    .babble-page-container {
+        padding: 30px 15px;
+    }
+}

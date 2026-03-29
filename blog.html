@@ -5,26 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GooHv's Blog</title>
     <link rel="icon" href="./images/favicon.png" type="image/png">
+    <!-- 引用的统一字体图标 -->
     <link rel="stylesheet" href="./font/iconfont.css">
     <!-- 1. 基础重置 (保持不变) -->
-    <link rel="stylesheet" href="./css/b_bass.css">
+    <link rel="stylesheet" href="./css/bass.css">
     <!-- 2. 核心架构与侧边栏 (必须第一个加载) -->
-    <link rel="stylesheet" href="./css/b_main.css">
+    <link rel="stylesheet" href="./css/bs_m_main.css">
     <!-- 3. 各个子页面的专用样式 (按需加载，顺序不重要，但在 main 之后) -->
-    <link rel="stylesheet" href="./css/bs_home.css">
-    <link rel="stylesheet" href="./css/bs_edevelopment.css">
-    <link rel="stylesheet" href="./css/bs_fullstacked.css">
-    <link rel="stylesheet" href="./css/bs_skills.css">
-    <link rel="stylesheet" href="./css/bs_donate.css">
+     
+    <link rel="stylesheet" href="./css/variables.css">
+    <link rel="stylesheet" href="./css/bs_s_myHome.css">
+    <link rel="stylesheet" href="./css/bs_s_standardpage.css">
+    <link rel="stylesheet" href="./css/bs_s_mybabble.css">
+    <link rel="stylesheet" href="./css/bs_s_donate.css">
     <link rel="stylesheet" href="./css/bs_error.css">
 </head>
 
 <body>
     <div class="shell">
         <ul class="nav">
-            <!-- 这是页面的logo展示区 -->
+            <!-- 我的主页 -->
             <li id="logo">
-                <a href="#my-home">
+                <a href="#myHome">
                     <div class="icon">
                         <div class="imageBox">
                             <img src="./images/CodingMan.png" alt="">
@@ -36,38 +38,47 @@
                     </div>
                 </a>
             </li>
-            <!-- 这是页面的选框区之设备开发 -->
+            <!-- 我的学习 -->
             <li>
-                <a href="#e-development">
+                <a href="#myStudies">
                     <div class="icon">
-                        <i class="iconfont icon-e-development"></i>
+                        <i class="iconfont icon-myStudies"></i>
                     </div>
-                    <div class="text">设备开发</div>
+                    <div class="text">我的学习</div>
                 </a>
             </li>
-            <!-- 这是页面的选框区之全栈技术 -->
+            <!-- 我的经验 -->
             <li>
-                <a href="#full-stacked">
+                <a href="#myExperience">
                     <div class="icon">
-                        <i class="iconfont icon-full-stacked"></i>
+                        <i class="iconfont icon-myExperience"></i>
                     </div>
-                    <div class="text">全栈技术</div>
+                    <div class="text">我的经验</div>
                 </a>
             </li>
-            <!-- 这是页面的选框区之工具技巧 -->
+            <!-- 我的项目 -->
             <li>
-                <a href="#tools-skills" >
+                <a href="#myProject" >
                     <div class="icon">
-                        <i class="iconfont icon-skills"></i>
+                        <i class="iconfont icon-myProject"></i>
                     </div>
-                    <div class="text">工具技巧</div>
+                    <div class="text">我的项目</div>
                 </a>
             </li>
-            <!-- 这是页面的选框区之关于捐献 -->
+            <!-- 我的碎碎念 -->
             <li>
-                <a href="#about-donation" >
+                <a href="#myBabble" >
                     <div class="icon">
-                        <i class="iconfont icon-about-donate"></i>
+                        <i class="iconfont icon-myBabble"></i>
+                    </div>
+                    <div class="text">我的碎念</div>
+                </a>
+            </li>
+            <!-- 关于捐献 -->
+            <li>
+                <a href="#donate" >
+                    <div class="icon">
+                        <i class="iconfont icon-donate"></i>
                     </div>
                     <div class="text">关于捐献</div>
                 </a>
@@ -101,27 +112,32 @@
         </ul>
     </div>
 
-    <!-- 这是主页面中主页链接区域 -->
-    <section id="my-home" >
+    <!-- 我的主页 -->
+    <section id="myHome" >
         
     </section>
 
-    <!-- 这是主页面中设备开发链接区域 -->
-    <section id="e-development">
+    <!-- 我的学习 -->
+    <section id="myStudies">
         
     </section>
 
-    <!-- 这是主页面中全栈技术链接区域 -->
-    <section id="full-stacked">
+    <!-- 我的经验 -->
+    <section id="myExperience">
         
     </section>
 
-    <!-- 这是主页面中工具技巧链接区域 -->
-    <section id="tools-skills">
+    <!-- 我的项目 -->
+    <section id="myProject">
         
     </section>
-    <!-- 这是主页面中关于捐献链接区域 -->
-    <section id="about-donation">
+
+    <!-- myBabble -->
+    <section id="myBabble">
+        
+    </section>
+    <!-- 关于捐献 -->
+    <section id="donate">
         
     </section>
 
@@ -129,17 +145,22 @@
 <!-- 1. 全局配置 (必须第一个，提供 PAGE_PATH_MAP) -->
 <script src="./js/b_gconfig.js"></script>
 
-<!-- 2. 功能模块 (定义函数，依赖配置) -->
+
+
+<!-- 3. 功能模块 (定义函数，依赖配置) -->
 <script src="./js/b_hightlight.js"></script>
 <script src="./js/b_load.js"></script>
 
-<!-- 3. 初始化入口 (最后加载，绑定事件并调用上述函数) -->
+<!-- 4. 初始化入口 (最后加载，绑定事件并调用上述函数) -->
 <script src="./js/b_init.js"></script>
 
-<!-- 4. 点击菜单触发事件 -->
+<!-- 5. 点击菜单触发事件 -->
 <script src="./js/b_clickmenu.js"></script>
 
-<!-- 5. 滚动滑轮触发事件 -->
+<!-- 6. 滚动滑轮触发事件 -->
 <script src="./js/b_scroll.js"></script>
+
+<!-- 2. 下滑逐渐显示的功能，提高美感 -->
+<script src="./js/b_s_display.js"></script>
 </body>
 </html> 

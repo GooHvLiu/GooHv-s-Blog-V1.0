@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 5144908 */
-  src: url('iconfont.woff2?t=1774449255094') format('woff2'),
-       url('iconfont.woff?t=1774449255094') format('woff'),
-       url('iconfont.ttf?t=1774449255094') format('truetype');
+  src: url('iconfont.woff2?t=1774787598130') format('woff2'),
+       url('iconfont.woff?t=1774787598130') format('woff'),
+       url('iconfont.ttf?t=1774787598130') format('truetype');
 }
 
 .iconfont {
@@ -13,24 +13,188 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-search:before {
-  content: "\e87c";
+.icon-CSS:before {
+  content: "\e61d";
 }
 
-.icon-rocket:before {
-  content: "\ea2d";
+.icon-react:before {
+  content: "\f21a";
 }
 
-.icon-map-signs:before {
-  content: "\f046";
+.icon-mysql:before {
+  content: "\ec6d";
 }
 
-.icon-puzzle-piece:before {
-  content: "\f08c";
+.icon-java-script:before {
+  content: "\e810";
 }
 
-.icon-e-development:before {
-  content: "\e623";
+.icon-vue:before {
+  content: "\e69a";
+}
+
+.icon-mdb:before {
+  content: "\e605";
+}
+
+.icon-cyuyan:before {
+  content: "\e61a";
+}
+
+.icon-vscode:before {
+  content: "\e868";
+}
+
+.icon-halcon:before {
+  content: "\e639";
+}
+
+.icon-confused:before {
+  content: "\e6e0";
+}
+
+.icon-first-encounter:before {
+  content: "\e642";
+}
+
+.icon-awakening:before {
+  content: "\e624";
+}
+
+.icon-deadlock:before {
+  content: "\e699";
+}
+
+.icon-trapped:before {
+  content: "\e667";
+}
+
+.icon-director-manager:before {
+  content: "\e683";
+}
+
+.icon-senior-engineer:before {
+  content: "\e609";
+}
+
+.icon-general-manager:before {
+  content: "\e60a";
+}
+
+.icon-work-history:before {
+  content: "\e607";
+}
+
+.icon-hobby:before {
+  content: "\e6f9";
+}
+
+.icon-tag:before {
+  content: "\e66c";
+}
+
+.icon-newspaper:before {
+  content: "\e916";
+}
+
+.icon-play-circle:before {
+  content: "\e781";
+}
+
+.icon-bullhorn:before {
+  content: "\e65b";
+}
+
+.icon-brain:before {
+  content: "\ef4e";
+}
+
+.icon-arrow-right:before {
+  content: "\e840";
+}
+
+.icon-film:before {
+  content: "\e671";
+}
+
+.icon-play:before {
+  content: "\e67a";
+}
+
+.icon-bolt:before {
+  content: "\e604";
+}
+
+.icon-eye:before {
+  content: "\e7ed";
+}
+
+.icon-office-tools:before {
+  content: "\e603";
+}
+
+.icon-folder-open:before {
+  content: "\e726";
+}
+
+.icon-gamepad:before {
+  content: "\e8a7";
+}
+
+.icon-shopping-cart:before {
+  content: "\e881";
+}
+
+.icon-server:before {
+  content: "\eb8e";
+}
+
+.icon-html5:before {
+  content: "\e602";
+}
+
+.icon-link:before {
+  content: "\e772";
+}
+
+.icon-external-link-alt:before {
+  content: "\eb27";
+}
+
+.icon-python:before {
+  content: "\ec18";
+}
+
+.icon-cloud:before {
+  content: "\e869";
+}
+
+.icon-myProject-ico:before {
+  content: "\ebb1";
+}
+
+.icon-myExperience-ico:before {
+  content: "\e618";
+}
+
+.icon-myStudies-ico:before {
+  content: "\e600";
+}
+
+.icon-myProject:before {
+  content: "\e9a5";
+}
+
+.icon-myBabble:before {
+  content: "\e652";
+}
+
+.icon-myExperience:before {
+  content: "\e72b";
+}
+
+.icon-myStudies:before {
+  content: "\e681";
 }
 
 .icon-w3school:before {
@@ -49,19 +213,11 @@
   content: "\e617";
 }
 
-.icon-skills:before {
-  content: "\ec9f";
-}
-
-.icon-full-stacked:before {
-  content: "\e63d";
-}
-
-.icon-about-donate:before {
+.icon-donate:before {
   content: "\e601";
 }
 
-.icon-home:before {
+.icon-myHome:before {
   content: "\eac9";
 }
 

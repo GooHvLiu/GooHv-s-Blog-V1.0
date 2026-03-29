@@ -1,0 +1,205 @@
+/* ====================================================================================
+   bs_s_standardpage.css - 所有引入页面（我的学习，我的经验，我的项目）样式
+   ==================================================================================== */
+/* --- 页面主体容器 --- */
+.importPage-main-container {
+   max-width: var(--sectionHTMLWidth); 
+   width: 100%;
+   margin: 0 auto;
+   padding: 0px 20px 50px; /* 顶部留出导航栏空间 */
+}
+
+/* --- 板块通用样式 --- */
+.importPage-section-block {
+   margin-bottom: 20px; /* 板块间距 */
+   /* 用于滚动动画 */
+   /* opacity: 0;  */
+   transform: translateY(30px);
+   transition: all 0.8s ease-out;
+}
+
+.importPage-section-block.visible {
+   opacity: 1;
+   transform: translateY(0);
+}
+
+/* --- 创意标题框设计 --- */
+.importPage-section-header {
+   text-align: center;
+   margin-bottom: 50px;
+   position: relative;
+}
+
+/* --- 字体图标变大 --- */
+.importPage-section-header .iconfont {
+   font-size: 2.2rem; /* 这样只会影响标题，不会影响其他地方 */
+}
+
+.importPage-section-header h2 {
+   font-size: 2.2rem;
+   margin: 0;
+   color: var(--text-main);
+   display: inline-block;
+   position: relative;
+   z-index: 1;
+}
+
+/* 标题背后的装饰圆圈 */
+.importPage-section-header::before {
+   content: '';
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   width: 200px;
+   height: 60px;
+   background: rgba(74, 144, 226, 0.1);
+   border-radius: 30px;
+   z-index: 0;
+}
+
+.importPage-section-desc {
+   margin-top: 15px;
+   color: var(--text-sub);
+   font-size: 1rem;
+}
+
+/* --- 磁贴网格布局 --- */
+.importPage-magnet-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+   gap: 30px;
+}
+
+/* --- 核心：磁贴卡片设计 --- */
+.importPage-resource-card {
+   background: var(--card-bg);
+   border-radius: 16px;
+   padding: 25px;
+   text-decoration: none;
+   color: var(--text-main);
+   box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+   display: flex;
+   flex-direction: column;
+   position: relative;
+   overflow: hidden;
+   border: 1px solid rgba(0,0,0,0.02);
+
+   /* 核心：平时微微晃动 */
+   animation: gentle-float 5s ease-in-out infinite;
+}
+
+/* 顶部彩色条纹装饰 */
+.importPage-resource-card::after {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 4px;
+   background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+   opacity: 0;
+   transition: opacity 0.3s;
+}
+
+/* 卡片内容 */
+.importPage-card-icon {
+   font-size: 2rem;
+   margin-bottom: 15px;
+   color: var(--primary-color);
+}
+
+/* 卡片中字体图标的大小 */
+.importPage-card-icon .iconfont {
+   font-size: 2rem;
+}
+
+.importPage-card-title {
+   font-size: 1.2rem;
+   font-weight: bold;
+   margin: 0 0 10px 0;
+}
+
+.importPage-card-desc {
+   font-size: 0.9rem;
+   color: var(--text-sub);
+   margin-bottom: 20px;
+   flex: 1; /* 让内容撑开高度 */
+}
+
+/* 网盘信息区域 */
+.importPage-cloud-info {
+   background: #f4f6f8;
+   border-radius: 8px;
+   padding: 10px 15px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   margin-bottom: 15px;
+   font-size: 0.85rem;
+   border: 1px solid #e1e4e8;
+}
+
+.importPage-cloud-name {
+   font-weight: bold;
+   color: #555;
+   display: flex;
+   align-items: center;
+   gap: 5px;
+}
+
+.importPage-cloud-pwd {
+   background: #fff;
+   padding: 2px 8px;
+   border-radius: 4px;
+   color: var(--accent-color);
+   font-family: monospace;
+   font-weight: bold;
+   border: 1px dashed var(--accent-color);
+}
+
+/* 底部按钮 */
+.importPage-card-btn {
+   display: block;
+   text-align: center;
+   background: var(--text-main);
+   color: #fff;
+   padding: 10px;
+   border-radius: 8px;
+   font-weight: 600;
+   transition: background 0.3s;
+}
+
+/* --- 悬停交互 --- */
+.importPage-resource-card:hover {
+   transform: translateY(-8px) scale(1.02);
+   box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+   animation-play-state: paused; /* 悬停时停止晃动 */
+   border-color: rgba(74, 144, 226, 0.3);
+}
+
+.importPage-resource-card:hover::after {
+   opacity: 1;
+}
+
+.importPage-resource-card:hover .card-btn {
+   background: var(--primary-color);
+}
+
+/* --- 动画定义 --- */
+@keyframes gentle-float {
+   0%, 100% { transform: translateY(0) rotate(0deg); }
+   25% { transform: translateY(-3px) rotate(0.5deg); }
+   75% { transform: translateY(3px) rotate(-0.5deg); }
+}
+
+/* --- 响应式 --- */
+@media (max-width: 768px) {
+   .magnet-grid {
+         grid-template-columns: 1fr;
+   }
+   .section-header h2 {
+         font-size: 1.8rem;
+   }
+}

@@ -20,6 +20,11 @@
 
 ####  Update Details
 
+###### *March  29, 2026*
+
+* *The overall frame and appearance effect of the blog have been closed;*
+* *The content of myStudies section has been updated gradually;*
+
 ###### *March  27, 2026*
 
 * *My blog's website is launched for the first time without using a separate domain;*

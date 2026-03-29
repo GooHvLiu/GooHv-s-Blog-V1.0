@@ -1,0 +1,51 @@
+/* =========================================
+   bs_variables.css - 全局变量
+   ========================================= */
+:root{
+
+
+    /* 选中菜单对应圆角大小 */
+    --selectedRadius:15px;
+
+    /* 选中菜单展开的宽度 */
+    --sectionOpenWidth:160px;
+
+    /* 选中菜单未展开的宽度 */
+    --sectionClosedWidth:35px;
+
+    /* section各个html显示的宽度尺寸 */
+    --sectionHTMLWidth:980px;    
+
+    /* standardpage.css 主色调：科技蓝 */
+    --primary-color: #4a90e2; 
+
+    /* standardpage.css 强调色：珊瑚红 */
+    --accent-color: #ff6b6b; 
+
+    /* standardpage.css 背景色：浅灰 */ 
+    --bg-color: #f8f9fa; 
+
+    /* 卡片背景 */     
+    --card-bg: #ffffff;  
+    
+    /* 主文字 */
+    --text-main: #2c3e50; 
+    
+    /* 副文字 */
+    --text-sub: #7f8c8d;   
+    
+    /* mybabble.css 紫色：代表思考与深度 */
+    --babble-primary: #8e44ad;
+    
+    /* mybabble.css 亮紫：用于高亮 */
+    --babble-accent: #e056fd;
+
+    --primary: #ffa117;
+
+    --bg-dark: #0a0a0a;
+
+    --text-light: #f0f0f0;
+    
+    --text-dim: #888;
+         
+}

@@ -1,5 +1,5 @@
 /* =========================================
-   blog_main.css - 最终修正版 (支持长内容 + 磁铁吸附)
+   bs_m_main.css 主页面核心样式
    ========================================= */
 
 /* --- 全局重置 --- */
@@ -13,7 +13,7 @@ html, body {
 body {
     background: #e4e9f5;
     font-family: 'Arial', 'Microsoft YaHei', sans-serif;
-    
+    color:#2c3e50;/* 主文字 */
     /* 【核心魔法 1】让 body 成为滚动容器 */
     height: 100vh;
     overflow-y: auto;       /* 允许垂直滚动 */
@@ -89,26 +89,33 @@ section * {
 /* ================= 左侧侧边栏 (.shell) - 保持原样 ================= */
 .shell {
     position: fixed;
-    width: 84px;
+    width: var(--sectionClosedWidth);
     height: 100%;
     background: #000000;
     z-index: 9999; /* 确保始终在最上层 */
     transition: width 0.5s;
-    padding-left: 10px;
     overflow: hidden;
+    
 }
 
 .shell:hover {
-    width: 200px;
+    width: var(--sectionOpenWidth);
+}
+
+#triangleGuid{
+    width: 30px;
+    height:30px;
 }
 
 .imageBox {
     position: relative;
-    width: 50px;
-    height: 50px;
+    width: 25px;
+    height: 25px;
+    left:12px;
     border-radius: 50%;
     overflow: hidden;
     background: #fff;
+    margin-left: -10px;
 }
 
 .imageBox img {
@@ -119,8 +126,8 @@ section * {
 
 .active {
     background: #e4e9f5;
-    border-top-left-radius: 50px;
-    border-bottom-left-radius: 50px;
+    border-top-left-radius: var(--selectedRadius);
+    border-bottom-left-radius: var(--selectedRadius);
 }
 
 .active::before {
@@ -128,9 +135,9 @@ section * {
     position: absolute;
     top: -30px;
     right: 0;
-    width: 30px;
+    width: 20px;
     height: 30px;
-    border-bottom-right-radius: 25px;
+    border-bottom-right-radius: var(--selectedRadius);
     box-shadow: 5px 5px 0 5px #e4e9f5;
     background: transparent;
 }
@@ -140,15 +147,16 @@ section * {
     position: absolute;
     bottom: -30px;
     right: 0;
-    width: 30px;
+    width: 20px;
     height: 30px;
-    border-top-right-radius: 25px;
+    border-top-right-radius: var(--selectedRadius);
     box-shadow: 5px -5px 0 5px #e4e9f5;
     background: transparent;
 }
 
 #logo {
-    margin: 40px 0 100px 0;
+    margin: 40px 0 20px 0;
+    /* background-color: red; */
 }
 
 .shell ul {
@@ -156,15 +164,11 @@ section * {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    padding-bottom: 0;
     list-style: none;
-    margin: 0;
-    padding-left: 0;
 }
 
 .shell ul li {
     position: relative;
-    padding: 5px;
 }
 
 .shell ul li a {
@@ -179,22 +183,24 @@ section * {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 60px;
-    padding-left: 10px;
+    padding-left: 2.5px;
     height: 70px;
     color: rgb(255, 255, 255);
     transition: 0.5s;
 }
 
+/* 选中菜单后面的黑色圆圈 */
 .active a .icon::before {
     content: "";
     position: absolute;
-    inset: 5px;
-    width: 60px;
+    top:18.79px;
+    width: 32px;
+    height: 32px;
+    left:1.2px;
     background: #000000;
     border-radius: 50%;
     transition: 0.5s;
-    border: 7px solid #ffa117;
+    border: 3px solid #ffa117;
     box-sizing: border-box;
 }
 
@@ -212,7 +218,7 @@ section * {
     align-items: flex-start;
     font-size: 20px;
     color: #ffad32c1;
-    padding-left: 15px;
+    padding-left: 20px;
     text-transform: uppercase;
     letter-spacing: 2px;
     transition: 0.5s;
@@ -239,7 +245,7 @@ section * {
 .friend-links-container {
     position: absolute;
     bottom: -10px;
-    left: 3px;
+    left: -15px;
     width: calc(100% - 20px);
     transition: all 0.5s;
     z-index: 100;
