@@ -111,7 +111,8 @@ section * {
     position: relative;
     width: 25px;
     height: 25px;
-    left:12px;
+    top:-0.6px;
+    left:10.2px;
     border-radius: 50%;
     overflow: hidden;
     background: #fff;
@@ -189,6 +190,10 @@ section * {
     transition: 0.5s;
 }
 
+.icon .iconfont {
+    font-size: 25px;
+}
+
 /* 选中菜单后面的黑色圆圈 */
 .active a .icon::before {
     content: "";
@@ -196,7 +201,7 @@ section * {
     top:18.79px;
     width: 32px;
     height: 32px;
-    left:1.2px;
+    left:-1px;
     background: #000000;
     border-radius: 50%;
     transition: 0.5s;
